@@ -1,40 +1,50 @@
 <div class="container">
-  <form class="form">
-    <h1>Help Desk</h1>
-    <!-- Caminho da imagem corrigido -->
-    <img src="assets/img/logo-helpdesk.png" alt="Logo Help Desk" />
+  <form class="form mat-elevation-z8">
+    <div class="header">
+      <img src="assets/img/helpdesk.png" alt="Logo HelpDesk" />
+      <h1>Bem-vindo</h1>
+      <p>Faça login para continuar</p>
+    </div>
 
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Email</mat-label>
       <input
-        matInput
-        type="email"
+        [(ngModel)]="creds.email"
         name="email"
-        placeholder="Ex: email@dominio.com"
         [formControl]="email"
         required
+        matInput
+        placeholder="Ex: nome@email.com"
       />
+      <mat-icon matSuffix>email</mat-icon>
     </mat-form-field>
 
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Senha</mat-label>
       <input
-        matInput
-        type="password"
+        [(ngModel)]="creds.senha"
         name="senha"
-        placeholder="Digite sua senha"
         [formControl]="senha"
         required
+        matInput
+        type="password"
       />
+      <mat-icon matSuffix>lock</mat-icon>
     </mat-form-field>
 
     <button
       (click)="logar()"
-      class="full-width mat-elevation-z4"
-      mat-raised-button
+      [disabled]="!validaCampos()"
+      class="full-width btn-login"
+      mat-flat-button
       color="primary"
     >
       ENTRAR
     </button>
+
+    <div class="register-link">
+      <span>Não tem conta? </span>
+      <a routerLink="/register">Cadastre-se aqui</a>
+    </div>
   </form>
 </div>

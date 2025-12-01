@@ -51,6 +51,7 @@ import { ChamadoReadComponent } from "./components/chamado/chamado-read/chamado-
 
 // Interceptor de Autenticação (CRUCIAL PARA O LOGIN FUNCIONAR)
 import { AuthInterceptorProvider } from "./interceptors/auth.interceptor";
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { AuthInterceptorProvider } from "./interceptors/auth.interceptor";
     ChamadoCreateComponent,
     ChamadoUpdateComponent,
     ChamadoReadComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

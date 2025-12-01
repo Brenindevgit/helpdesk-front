@@ -1,0 +1,75 @@
+<div class="container">
+  <form class="form mat-elevation-z8">
+    <div class="header">
+      <h1>Crie sua Conta</h1>
+      <p>Preencha os dados abaixo para acessar</p>
+    </div>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Nome Completo</mat-label>
+      <input
+        matInput
+        [(ngModel)]="cliente.nome"
+        name="nome"
+        [formControl]="nome"
+        required
+        placeholder="Ex: João Silva"
+      />
+      <mat-icon matSuffix>face</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>CPF (com pontos e traço)</mat-label>
+      <input
+        matInput
+        [(ngModel)]="cliente.cpf"
+        name="cpf"
+        [formControl]="cpf"
+        required
+        placeholder="000.000.000-00"
+      />
+      <mat-icon matSuffix>badge</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input
+        matInput
+        [(ngModel)]="cliente.email"
+        name="email"
+        [formControl]="email"
+        required
+        placeholder="Ex: joao@email.com"
+      />
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input
+        matInput
+        [(ngModel)]="cliente.senha"
+        name="senha"
+        [formControl]="senha"
+        type="password"
+        required
+      />
+      <mat-icon matSuffix>lock</mat-icon>
+    </mat-form-field>
+
+    <button
+      (click)="create()"
+      [disabled]="!validaCampos()"
+      class="full-width btn-register"
+      mat-flat-button
+      color="primary"
+    >
+      CADASTRAR
+    </button>
+
+    <div class="login-link">
+      <span>Já tem uma conta? </span>
+      <a routerLink="/login">Faça Login</a>
+    </div>
+  </form>
+</div>
