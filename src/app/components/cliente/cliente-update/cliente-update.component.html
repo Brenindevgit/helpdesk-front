@@ -1,0 +1,90 @@
+<div class="container mat-elevation-z8">
+  <h1 class="full-width">Atualizar Cliente</h1>
+  <img
+    class="full-width"
+    src="assets/img/cliente-create.svg"
+    alt="Imagem de atualização de cliente"
+  />
+
+  <form class="form">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input
+        matInput
+        placeholder="Ex: José da Silva"
+        [formControl]="nome"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input
+        matInput
+        placeholder="Ex: 111.222.333-44"
+        [formControl]="cpf"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>E-mail</mat-label>
+      <input
+        matInput
+        placeholder="Ex: jose@email.com"
+        [formControl]="email"
+        required
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Senha</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Ex: 123"
+        [formControl]="senha"
+        required
+      />
+    </mat-form-field>
+
+    <div class="perfis">
+      <mat-checkbox
+        (change)="addPerfil(0)"
+        [checked]="cliente.perfis.includes(0)"
+        >ADMIN</mat-checkbox
+      >
+      <mat-checkbox
+        (change)="addPerfil(1)"
+        [checked]="cliente.perfis.includes(1)"
+        >CLIENTE</mat-checkbox
+      >
+      <mat-checkbox
+        (change)="addPerfil(2)"
+        [checked]="cliente.perfis.includes(2)"
+        >TÉCNICO</mat-checkbox
+      >
+    </div>
+
+    <button
+      (click)="update()"
+      [disabled]="!validaCampos()"
+      mat-raised-button
+      color="primary"
+      class="full-width mat-elevation-z4"
+    >
+      ATUALIZAR
+    </button>
+
+    <button
+      routerLink="../"
+      mat-stroked-button
+      color="warn"
+      class="full-width mat-elevation-z4"
+    >
+      CANCELAR
+    </button>
+  </form>
+
+  <p class="full-width">Desenvolvido por b.h</p>
+</div>

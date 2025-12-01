@@ -1,0 +1,43 @@
+.container {
+  width: 40%;
+  margin: auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 200px;
+  margin: 0 auto 2rem auto;
+}
+
+.status-prioridade {
+  display: flex;
+  justify-content: space-between; /* Separa os campos igualmente */
+}
+
+.status-prioridade mat-form-field {
+  width: 49%; /* Cada campo ocupa metade da linha */
+}
+
+.area {
+  height: 100px;
+  resize: none; /* Impede redimensionar */
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 90%;
+  }
+}

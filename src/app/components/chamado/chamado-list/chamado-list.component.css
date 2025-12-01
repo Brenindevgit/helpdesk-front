@@ -1,0 +1,45 @@
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+.edit {
+  color: #fbc02d; /* Amarelo */
+  margin-right: 10px;
+}
+
+.delete {
+  color: #1976d2; /* Azul */
+}
+
+/* Espaçamento para o filtro de rádio */
+mat-radio-group {
+  display: block;
+  margin: 20px 0;
+}
+
+mat-radio-button {
+  margin-right: 20px;
+}
+
+/* Opcional: Cores para prioridade */
+.prioridade-0 {
+  color: green;
+  font-weight: bold;
+}
+.prioridade-1 {
+  color: orange;
+  font-weight: bold;
+}
+.prioridade-2 {
+  color: red;
+  font-weight: bold;
+}

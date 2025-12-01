@@ -1,0 +1,36 @@
+.container {
+  width: 40%; /* Define a largura do formulário */
+  margin: auto; /* Centraliza na tela */
+  padding: 2rem;
+  background-color: #fff; /* Fundo branco */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+.full-width {
+  width: 100%; /* Faz inputs e botões ocuparem toda a largura */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column; /* Organiza os elementos um abaixo do outro */
+}
+
+img {
+  width: 200px;
+  margin: 0 auto 2rem auto; /* Centraliza a imagem */
+}
+
+.perfis {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around; /* Espalha os checkboxes */
+}
+
+/* Responsividade para telas menores (ex: celulares) */
+@media (max-width: 700px) {
+  .container {
+    width: 90%; /* Aumenta a largura para 90% em telas pequenas */
+  }
+}

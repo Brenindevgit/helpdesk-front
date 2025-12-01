@@ -1,0 +1,77 @@
+.container {
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #3f51b5; /* Cor primária do tema */
+}
+
+.card-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Para funcionar bem em mobile */
+}
+
+.card {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff; /* Texto branco */
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Cores específicas para cada status */
+.card-aberto {
+  background: linear-gradient(45deg, #ef5350, #e53935); /* Vermelho */
+}
+
+.card-andamento {
+  background: linear-gradient(45deg, #ffa726, #fb8c00); /* Laranja */
+}
+
+.card-encerrado {
+  background: linear-gradient(45deg, #66bb6a, #43a047); /* Verde */
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.card-header mat-icon {
+  font-size: 2rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.card-content h3 {
+  font-size: 3rem;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.card-content p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.image-container {
+  margin-top: 40px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.image-container img {
+  max-width: 600px;
+  width: 100%;
+}

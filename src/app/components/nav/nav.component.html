@@ -1,0 +1,56 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" opened fixedInViewport="true">
+    <div class="logo">
+      <img src="/src/assets/img/logo-helpdesk.png" alt="Logo HelpDesk" />
+    </div>
+
+    <mat-nav-list class="nav-list">
+      <a mat-list-item routerLink="home">
+        <mat-icon>home</mat-icon>
+        Home
+      </a>
+
+      <a
+        mat-list-item
+        routerLink="tecnicos"
+        *ngIf="authService.hasPermission('ROLE_ADMIN')"
+      >
+        <mat-icon>account_circle</mat-icon>
+        Técnicos
+      </a>
+
+      <a
+        mat-list-item
+        routerLink="clientes"
+        *ngIf="
+          authService.hasPermission('ROLE_ADMIN') ||
+          authService.hasPermission('ROLE_TECNICO')
+        "
+      >
+        <mat-icon>person</mat-icon>
+        Clientes
+      </a>
+
+      <a mat-list-item routerLink="chamados">
+        <mat-icon>support</mat-icon>
+        Chamados
+      </a>
+
+      <a mat-list-item class="logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Sair
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>HelpDesk</span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
