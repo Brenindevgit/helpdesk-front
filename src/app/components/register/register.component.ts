@@ -11,7 +11,7 @@ import { ClienteService } from "src/app/services/cliente.service";
   styleUrls: ["./register.component.css"],
 })
 export class RegisterComponent implements OnInit {
-  // Inicializamos com 'as any' no ID para evitar erro de tipagem
+  // Objeto cliente inicializado vazio
   cliente: Cliente = {
     id: "" as any,
     nome: "",
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     dataCriacao: "" as any,
   };
 
-  // Validadores dos campos
+  // Controles do Formulário (Validadores)
   nome = new FormControl("", [Validators.minLength(3)]);
   cpf = new FormControl("", [Validators.required]);
   email = new FormControl("", [Validators.email]);
@@ -43,10 +43,18 @@ export class RegisterComponent implements OnInit {
   }
 
   create(): void {
-    // O Backend espera os perfis, mas ele mesmo define como CLIENTE se vier vazio ou errado.
-    // Vamos limpar para garantir.
+    // PASSOS ADICIONADOS:
+    // Pegamos os valores digitados nos inputs (FormControls)
+    // e jogamos dentro do objeto 'cliente' manualmente.
+    this.cliente.nome = this.nome.value;
+    this.cliente.cpf = this.cpf.value;
+    this.cliente.email = this.email.value;
+    this.cliente.senha = this.senha.value;
+
+    // Limpamos os perfis para garantir que o Backend defina como CLIENTE padrão
     this.cliente.perfis = [];
 
+    // Envia para o serviço
     this.service.create(this.cliente).subscribe({
       next: () => {
         this.toast.success("Conta criada com sucesso! Faça login.", "Cadastro");

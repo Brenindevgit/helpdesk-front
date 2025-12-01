@@ -1,7 +1,7 @@
 <div class="container">
   <form class="form mat-elevation-z8">
     <div class="header">
-      <img src="assets/img/helpdesk.png" alt="Logo HelpDesk" />
+      <img src="assets/img/logo.png" alt="Logo DeskFy" />
       <h1>Bem-vindo</h1>
       <p>Faça login para continuar</p>
     </div>
@@ -9,7 +9,6 @@
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Email</mat-label>
       <input
-        [(ngModel)]="creds.email"
         name="email"
         [formControl]="email"
         required
@@ -22,7 +21,6 @@
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Senha</mat-label>
       <input
-        [(ngModel)]="creds.senha"
         name="senha"
         [formControl]="senha"
         required

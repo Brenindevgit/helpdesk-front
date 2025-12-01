@@ -1,6 +1,7 @@
 <div class="container">
   <form class="form mat-elevation-z8">
     <div class="header">
+      <img src="/assets/img/logo.png" alt="Logo DeskFy" />
       <h1>Crie sua Conta</h1>
       <p>Preencha os dados abaixo para acessar</p>
     </div>
@@ -9,7 +10,6 @@
       <mat-label>Nome Completo</mat-label>
       <input
         matInput
-        [(ngModel)]="cliente.nome"
         name="nome"
         [formControl]="nome"
         required
@@ -22,7 +22,6 @@
       <mat-label>CPF (com pontos e traço)</mat-label>
       <input
         matInput
-        [(ngModel)]="cliente.cpf"
         name="cpf"
         [formControl]="cpf"
         required
@@ -35,7 +34,6 @@
       <mat-label>E-mail</mat-label>
       <input
         matInput
-        [(ngModel)]="cliente.email"
         name="email"
         [formControl]="email"
         required
@@ -48,7 +46,6 @@
       <mat-label>Senha</mat-label>
       <input
         matInput
-        [(ngModel)]="cliente.senha"
         name="senha"
         [formControl]="senha"
         type="password"
